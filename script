@@ -1,0 +1,1 @@
+node hello.mjs > hello.log &
