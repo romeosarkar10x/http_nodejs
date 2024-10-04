@@ -16,8 +16,7 @@ app.use(
     express.Router()
         .use((req, res, next) => {
             req.info = `[${req.method}] ${req.protocol}://${req.hostname}${req.url}`;
-            console.log(req.info);
-            console.log(req.ip);
+            console.log(new Date().toLocaleString(), req.ip, req.info);
             next();
         })
         .use(router)
