@@ -1,14 +1,15 @@
 import express from "express";
 
+const port = 80;
 const app = express();
 
-app.listen(80, () => {
-    console.log("Listening on Port 80");
+app.listen(port, () => {
+    console.log("listening on port", port);
 });
 
 const router = express.Router();
 router.use((req, res, next) => {
-    res.send(`<h1>Hello World!</h1><p>Your IP is ${req.ip}</p><p>${req.info}</p>`);
+    res.send(`<h1>hello world!</h1><p>your ip is ${req.ip}</p><p>${req.info}</p>`);
     next();
 });
 
